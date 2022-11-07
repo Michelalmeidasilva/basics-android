@@ -1,3 +1,4 @@
+## Problemas com o build
 Em algumas situações, o Android Studio pode apresentar problemas de compilação no projeto que, mesmo seguindo as orientações para solução, não são resolvidos.
 
 Se você não teve nenhum problema, sugiro apenas que salve este exercício (seja copiando o texto, seja nos favoritos) para consultá-lo quando tiver um problema e prossiga com a próxima atividade.
