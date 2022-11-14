@@ -41,3 +41,15 @@ possível testar e investigar o problema.
 Hierarquia de views:
 
 Toda view não pode ter filhos, view groups podem ter filhas.
+
+
+## Namespaces de layout do Android
+
+Ao editar o layout por meio do código fonte XML, vimos que existem namespaces que oferecem atributos para editar as propriedades das Views.
+
+Utilizamos o namespace app para chamar atributos específicos da View.
+    Alternativa correta! Exatamente! A partir desse namespace, podemos utilizar atributos específicos, como as constraints do ConstraintLayout.
+
+Para apresentar o conteúdo apenas no preview, utilizamos o tools.
+    Alternativa correta! Isso mesmo! A partir desse namespace, podemos desenvolver o layout apresentando informações apenas no preview.
+
