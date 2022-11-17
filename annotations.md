@@ -85,3 +85,24 @@ The layout manager arranges the individual elements in your list. You can use on
 managers provided by the RecyclerView library, or you can define your own. Layout managers are all
 based on the library's LayoutManager abstract class.
 
+O que é o binding de View? Arquivos de layout são utilizados como uma referência para apresentar o
+conteúdo visual na tela. As informações que serão apresentadas no layout geralmente são produzidas
+pelo código fonte Kotlin/Java. Para que isso seja possível, fazemos o processo de binding de View
+que busca as Views do layout e disponibiliza no código fonte para a modificação dos dados. O que é o
+RecyclerView? Em situações que precisamos apresentar uma mesma View com informações diferentes, como
+é o caso de uma lista de produtos, podemos utilizar o RecyclerView. A partir dele temos a capacidade
+de criar Views dinamicamente a partir da nossa lógica de código-fonte sem a necessidade de modificar
+o layout cada vez que precisamos adicionar novas Views. O grande destaque do RecyclerView é a
+performance, tornado-o a recomendação para esse tipo de solução. Implementar o RecyclerView no
+layout e no código-fonte Para que seja possível utilizar o RecyclerView, configuramos um arquivo de
+layout exclusivo para ele e um arquivo de layout que representa cada um dos itens que serão criados
+e apresentados por ele. Por meio do código-fonte, utilizamos o Adapter para que RecyclerView saiba
+quais e quantas views serão criadas, como também, como será o processo de binding de View para cada
+uma delas. Como implementar o Adapter do RecyclerView O RecyclerView exige a implementação de um
+adapter exclusivo que se baseia em ViewHolders, referências responsáveis por manter as Views criadas
+e fazer o processo de binding de view cada. Para que tudo funcione de acordo, temos de criar os
+ViewHolders, fazer o processo de binding de View e contar quantos itens serão apresentados pelo
+Adapter. Configurar o gerenciador de layout do RecyclerView Para apresentar o conteúdo configurado
+pelo Adapter, o RecyclerView precisa indicar como o conteúdo será apresentado. Para isso temos a
+possibilidade de configurar o gerenciador de layout que tem algumas predefinições, como o
+LinearLayoutManager.

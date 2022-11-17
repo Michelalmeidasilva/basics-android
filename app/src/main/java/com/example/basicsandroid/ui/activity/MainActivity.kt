@@ -3,41 +3,39 @@ package com.example.basicsandroid.ui.activity
 import android.app.Activity
 import android.os.Bundle
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.basicsandroid.R
-import com.example.basicsandroid.ui.recycleviewer.adapter.FruitsListAdapter
+import com.example.basicsandroid.model.Product
+import com.example.basicsandroid.ui.recycleviewer.adapter.ProductListAdapter
+import java.math.BigDecimal
 
 class MainActivity : Activity() {
-
-
-    fun bindingTextViews() {
-        val nameTextView = findViewById<TextView>(R.id.name)
-        val mangaTV = findViewById<TextView>(R.id.manga)
-        val priceMangaTV = findViewById<TextView>(R.id.price_manga)
-        val laranjaTV = findViewById<TextView>(R.id.laranja)
-        val priceLaranjaTV = findViewById<TextView>(R.id.price_laranja)
-
-        //binding de views
-        nameTextView.text = "Cesta de Frutas"
-        laranjaTV.text = "Laranja"
-        priceLaranjaTV.text = "22.00"
-        mangaTV.text = "Mangass"
-        priceMangaTV.text = "21.00"
-
-
-        val recyclerView = findViewById<RecyclerView>(R.id.listFruits)
-        recyclerView.adapter = FruitsListAdapter()
-
-    }
 
 
     //ciclos de vida
     // 1. onCreate
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_main)
-        bindingTextViews()
+
+        val recyclerView = findViewById<RecyclerView>(R.id.listFruits)
+        recyclerView.adapter = ProductListAdapter(
+            this,
+            listOf(
+                Product(
+                    name = "teste 2",
+                    description = "este e um produto",
+                    price = BigDecimal("21.0")
+                ),
+                Product(
+                    name = "teste",
+                    description = "este e um produto 2",
+                    price = BigDecimal("20.0")
+                )
+            )
+        )
+        recyclerView.layoutManager = LinearLayoutManager(this);
 
     }
 
