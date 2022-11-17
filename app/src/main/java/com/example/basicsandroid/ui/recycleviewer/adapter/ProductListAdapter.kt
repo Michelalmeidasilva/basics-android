@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.basicsandroid.R
 import com.example.basicsandroid.model.Product
-import java.math.BigDecimal
 
 class ProductListAdapter(private val context: Context, val products: List<Product>) :
     RecyclerView.Adapter<ProductListAdapter.ViewHolder>() {
@@ -29,7 +28,7 @@ class ProductListAdapter(private val context: Context, val products: List<Produc
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(context)
-        val view = inflater.inflate(R.layout.product_item, parent, false)
+        val view = inflater.inflate(R.layout.activity_product_item, parent, false)
         return ViewHolder(view)
     }
 
