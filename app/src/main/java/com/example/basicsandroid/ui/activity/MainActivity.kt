@@ -1,8 +1,7 @@
 package com.example.basicsandroid.ui.activity
 
-import android.app.Activity
 import android.os.Bundle
-import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.basicsandroid.R
@@ -10,7 +9,7 @@ import com.example.basicsandroid.model.Product
 import com.example.basicsandroid.ui.recycleviewer.adapter.ProductListAdapter
 import java.math.BigDecimal
 
-class MainActivity : Activity() {
+class MainActivity : AppCompatActivity() {
 
 
     //ciclos de vida

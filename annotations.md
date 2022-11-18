@@ -106,3 +106,18 @@ Adapter. Configurar o gerenciador de layout do RecyclerView Para apresentar o co
 pelo Adapter, o RecyclerView precisa indicar como o conteúdo será apresentado. Para isso temos a
 possibilidade de configurar o gerenciador de layout que tem algumas predefinições, como o
 LinearLayoutManager.
+
+## Visão geral do AndroidX
+
+https://developer.android.com/jetpack/androidx
+
+## Visão geral - build tools
+
+https://www.youtube.com/watch?v=6llRWbdnmuk&ab_channel=AluraCursosOnline
+https://www.youtube.com/watch?v=uX6Ezf73OEY&ab_channel=AluraCursosOnline
+
+## Gradle
+
+Gradle baseia-se em tasks
+
+Para realizar o build é utilizado o grafo de tasks, directed acyclic graphs 
