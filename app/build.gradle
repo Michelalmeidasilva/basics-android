@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
 }
 
+
 android {
     namespace 'com.example.basicsandroid'
     compileSdk 33
@@ -30,10 +31,13 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
 }
+
 
 dependencies {
 
+    implementation 'com.logrocket:logrocket:1.8.0'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
     implementation 'androidx.recyclerview:recyclerview-selection:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
