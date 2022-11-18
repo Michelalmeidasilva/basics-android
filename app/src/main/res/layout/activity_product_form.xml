@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        tools:context=".ui.activity.ProductForm">
+        tools:context=".ui.activity.ProductFormActivity">
 
         <EditText
             android:hint="Nome"
