@@ -1,12 +1,15 @@
 package com.example.basicsandroid.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.basicsandroid.R
+import com.example.basicsandroid.dao.ProductsDao
 import com.example.basicsandroid.model.Product
 import com.example.basicsandroid.ui.recycleviewer.adapter.ProductListAdapter
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.math.BigDecimal
 
 class MainActivity : AppCompatActivity() {
@@ -16,26 +19,25 @@ class MainActivity : AppCompatActivity() {
     // 1. onCreate
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
 
+        val buttonAdd = findViewById<FloatingActionButton>(R.id.floatingActionButton)
         val recyclerView = findViewById<RecyclerView>(R.id.listFruits)
+        val productsDao = ProductsDao();
+
         recyclerView.adapter = ProductListAdapter(
             this,
-            listOf(
-                Product(
-                    name = "teste 2",
-                    description = "este e um produto",
-                    price = BigDecimal("21.0")
-                ),
-                Product(
-                    name = "teste",
-                    description = "este e um produto 2",
-                    price = BigDecimal("20.0")
-                )
-            )
+            productsDao.searchProuct()
         )
         recyclerView.layoutManager = LinearLayoutManager(this);
 
+
+        buttonAdd.setOnClickListener {
+            val intent = Intent(this, ProductFormActivity::class.java)
+            startActivity(intent);
+
+        }
     }
 
 }
