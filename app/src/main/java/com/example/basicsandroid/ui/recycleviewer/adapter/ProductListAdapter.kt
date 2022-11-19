@@ -1,6 +1,8 @@
 package com.example.basicsandroid.ui.recycleviewer.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,9 +11,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.basicsandroid.R
 import com.example.basicsandroid.model.Product
 
-class ProductListAdapter(private val context: Context, val products: List<Product>) :
+class ProductListAdapter(private val context: Context, products: List<Product>) :
     RecyclerView.Adapter<ProductListAdapter.ViewHolder>() {
-
+    private val mutableProducts = products.toMutableList();
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         fun bind(product: Product) {
@@ -33,10 +35,22 @@ class ProductListAdapter(private val context: Context, val products: List<Produc
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val product = products[position];
+        val product = this.mutableProducts[position];
+        Log.i("tag onbindiewholder", "entrou aqui ${product}")
+
         holder.bind(product);
     }
 
-    override fun getItemCount(): Int = products.size
+    override fun getItemCount(): Int = mutableProducts.size
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun onUpdate(products: List<Product>) {
+        Log.i("mutableProducts", "$mutableProducts")
+        Log.i("products", "$products")
+
+        this.mutableProducts.clear();
+        this.mutableProducts.addAll(products);
+        this.notifyDataSetChanged()
+    }
 
 }
