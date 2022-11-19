@@ -1,10 +1,9 @@
-package com.example.basicsandroid.ui.application
+package com.example.basicsandroid.application
 
 import android.app.Application
 import android.content.Context
 import com.logrocket.core.Configuration
 import com.logrocket.core.SDK
-
 
 class LogRocketApplication : Application() {
     override fun attachBaseContext(base: Context?) {
