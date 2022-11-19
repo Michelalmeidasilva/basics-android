@@ -12,15 +12,15 @@ import com.example.basicsandroid.ui.recycleviewer.adapter.ProductListAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.math.BigDecimal
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
 
     //ciclos de vida
     // 1. onCreate
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    // 2. onResume
 
-        setContentView(R.layout.activity_main)
+    override fun onResume() {
+        super.onResume()
 
         val buttonAdd = findViewById<FloatingActionButton>(R.id.floatingActionButton)
         val recyclerView = findViewById<RecyclerView>(R.id.listFruits)
@@ -36,8 +36,9 @@ class MainActivity : AppCompatActivity() {
         buttonAdd.setOnClickListener {
             val intent = Intent(this, ProductFormActivity::class.java)
             startActivity(intent);
-
         }
+
     }
+
 
 }

@@ -3,7 +3,6 @@ package com.example.basicsandroid.dao
 import com.example.basicsandroid.model.Product
 
 class ProductsDao() {
-    private val products = mutableListOf<Product>()
 
     fun createProduct(product: Product) {
         products.add(product);
@@ -13,4 +12,7 @@ class ProductsDao() {
         return products.toList();
     }
 
+    companion object {
+        private val products = mutableListOf<Product>()
+    }
 }

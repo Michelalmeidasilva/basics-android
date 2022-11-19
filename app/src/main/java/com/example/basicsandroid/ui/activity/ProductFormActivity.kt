@@ -25,8 +25,7 @@ class ProductFormActivity : AppCompatActivity(R.layout.activity_product_form) {
             val price = findViewById<EditText>(R.id.price)
             val nameValue = nameEditText.text.toString();
             val descriptionValue = description.text.toString();
-            val priceValue = if (price.text.toString()
-                    .isBlank()
+            val priceValue = if (price.text.toString().isBlank()
             ) BigDecimal(price.text.toString()) else BigDecimal.ZERO
 
             val newProduct = Product(nameValue, priceValue, descriptionValue)
@@ -35,6 +34,7 @@ class ProductFormActivity : AppCompatActivity(R.layout.activity_product_form) {
 
             productsDao.createProduct(newProduct)
 
+            finish();
             Log.i("ProductForm/i", "OnClickButton ${newProduct.toString()}")
         }
 
