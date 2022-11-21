@@ -9,7 +9,7 @@ import com.example.basicsandroid.R
 class LoginActivity : AppCompatActivity(R.layout.activity_login) {
 
 
-    fun bindComponents() {
+    private fun bindComponents() {
         val buttonSave = findViewById<Button>(R.id.login_save_button)
 
         buttonSave.setOnClickListener {

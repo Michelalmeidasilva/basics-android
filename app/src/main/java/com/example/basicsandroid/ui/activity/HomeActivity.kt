@@ -31,20 +31,17 @@ class HomeActivity : AppCompatActivity(R.layout.activity_home) {
         }
     }
 
-
     fun navigateToProdutFormActivity() {
         val intent = Intent(this, ProductFormActivity::class.java)
         startActivity(intent);
     }
 
-
     //ciclos de vida
     // 1. onCreate
     // 2. onResume
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        bindRecyclerView();
+        bindRecyclerView()
         bindButton()
     }
 
