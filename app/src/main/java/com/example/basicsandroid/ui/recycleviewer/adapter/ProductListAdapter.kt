@@ -9,10 +9,13 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.basicsandroid.R
+import com.example.basicsandroid.databinding.ActivityProductItemBinding
 import com.example.basicsandroid.model.Product
 
 class ProductListAdapter(private val context: Context, products: List<Product>) :
     RecyclerView.Adapter<ProductListAdapter.ViewHolder>() {
+    private lateinit var binding: ActivityProductItemBinding;
+
     private val mutableProducts = products.toMutableList();
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -30,7 +33,9 @@ class ProductListAdapter(private val context: Context, products: List<Product>) 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+
         val inflater = LayoutInflater.from(context)
+
         val view = inflater.inflate(R.layout.activity_product_item, parent, false)
         return ViewHolder(view)
     }
