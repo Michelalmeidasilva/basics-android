@@ -10,7 +10,7 @@ import com.example.basicsandroid.dao.ProductsDao
 import com.example.basicsandroid.ui.recycleviewer.adapter.ProductListAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class HomeActivity : AppCompatActivity(R.layout.activity_home) {
+class ProductsListActivity : AppCompatActivity(R.layout.activity_products_list) {
     private val productsDao = ProductsDao();
     private val adapter = ProductListAdapter(
         context = this,

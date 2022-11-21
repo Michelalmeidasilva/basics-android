@@ -13,7 +13,7 @@ class LoginActivity : AppCompatActivity(R.layout.activity_login) {
         val buttonSave = findViewById<Button>(R.id.login_save_button)
 
         buttonSave.setOnClickListener {
-            val intent = Intent(this, HomeActivity::class.java)
+            val intent = Intent(this, ProductsListActivity::class.java)
             startActivity(intent);
         }
     }

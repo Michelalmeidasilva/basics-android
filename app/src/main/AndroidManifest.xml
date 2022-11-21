@@ -39,7 +39,7 @@
         </activity>
 
         <activity
-            android:name=".ui.activity.HomeActivity"
+            android:name=".ui.activity.ProductsListActivity"
             android:exported="false" />
 
 
