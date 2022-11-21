@@ -15,7 +15,7 @@
 
         <EditText
             android:hint="Nome"
-            android:id="@+id/name"
+            android:id="@+id/product_form_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="22sp"
@@ -25,7 +25,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/description"
+            android:id="@+id/product_form_description"
             android:hint="Descrição"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -33,27 +33,27 @@
             android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/name" />
+            app:layout_constraintTop_toBottomOf="@id/product_form_name" />
 
         <EditText
             android:hint="Preço"
-            android:id="@+id/price"
+            android:id="@+id/product_form_price_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="22sp"
             android:inputType="numberDecimal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/description" />
+            app:layout_constraintTop_toBottomOf="@id/product_form_description" />
 
         <Button
-            android:id="@+id/save_button"
+            android:id="@+id/product_form_save_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Salvar"
             app:layout_constraintVertical_bias="1"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/price" />
+            app:layout_constraintTop_toBottomOf="@+id/product_form_price_title" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

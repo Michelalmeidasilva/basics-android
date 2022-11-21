@@ -17,9 +17,10 @@ class ProductListAdapter(private val context: Context, products: List<Product>) 
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         fun bind(product: Product) {
-            val nameTextView = itemView.findViewById<TextView>(R.id.name_product)
-            val descriptionProduct = itemView.findViewById<TextView>(R.id.description_product)
-            val priceProduct = itemView.findViewById<TextView>(R.id.price_product)
+            val nameTextView = itemView.findViewById<TextView>(R.id.product_item_name_value)
+            val descriptionProduct =
+                itemView.findViewById<TextView>(R.id.product_item_description_value)
+            val priceProduct = itemView.findViewById<TextView>(R.id.product_item_price_value)
 
             //binding de views
             nameTextView.text = product.name
