@@ -5,59 +5,53 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/product_item_name_title"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Name"
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/product_item_name_value"
+        app:srcCompat="@android:color/holo_purple"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     <TextView
-        android:text="Banana"
-        android:layout_marginTop="8dp"
         android:id="@+id/product_item_name_value"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/product_item_name_title" />
-
-    <TextView
-        android:text="Price"
-        android:id="@+id/product_form_price_title"
         android:layout_marginTop="8dp"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/product_item_name_title"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginLeft="10dp"
+
+        android:text="Banana"
+
+        app:layout_constraintLeft_toRightOf="@id/imageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
         android:text="20.00"
+
         android:id="@+id/product_item_price_value"
         android:layout_marginTop="8dp"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+
         app:layout_constraintTop_toBottomOf="@id/product_item_name_value"
-        app:layout_constraintLeft_toRightOf="@id/product_form_price_title" />
+        app:layout_constraintStart_toStartOf="@id/product_item_name_value" />
+
 
     <TextView
-        android:text="description"
-        android:id="@+id/product_item_description_title"
-        android:layout_marginTop="8dp"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/product_form_price_title"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:text="Este produto é top, muito top, bagulho é bom mesmo"
         android:id="@+id/product_item_description_value"
-        android:layout_marginTop="8dp"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/product_form_price_title"
-        app:layout_constraintLeft_toRightOf="@id/product_item_description_title" />
+
+        android:text="Este produto é top, muito top, bagulho é bom mesmo"
+        app:layout_constraintLeft_toRightOf="@id/product_item_description_value"
+        app:layout_constraintStart_toStartOf="@+id/product_item_name_value"
+        app:layout_constraintTop_toBottomOf="@+id/product_item_price_value" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
