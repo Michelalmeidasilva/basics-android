@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.basicsandroid.R
 import com.example.basicsandroid.databinding.ActivityProductItemBinding
 import com.example.basicsandroid.model.Product
+import java.text.NumberFormat
+import java.util.*
 
 class ProductListAdapter(private val context: Context, products: List<Product>) :
     RecyclerView.Adapter<ProductListAdapter.ViewHolder>() {
@@ -28,7 +30,11 @@ class ProductListAdapter(private val context: Context, products: List<Product>) 
             //binding de views
             nameTextView.text = product.name
             descriptionProduct.text = product.description
-            priceProduct.text = product.price.toPlainString()
+            val locale = NumberFormat.getCurrencyInstance(Locale("pt", "br"))
+
+            val valueBRL = locale.format(product.price)
+            priceProduct.text = valueBRL;
+
         }
     }
 
