@@ -1,6 +1,7 @@
 package com.example.basicsandroid.ui.recycleviewer.adapter
 
 import android.annotation.SuppressLint
+import android.content.ContentValues.TAG
 import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.basicsandroid.R
 import com.example.basicsandroid.databinding.ActivityProductItemBinding
 import com.example.basicsandroid.model.Product
+import com.google.android.material.card.MaterialCardView
 import java.text.NumberFormat
 import java.util.*
 
@@ -22,6 +24,12 @@ class ProductListAdapter(private val context: Context, products: List<Product>) 
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         fun bind(product: Product) {
+            val card = itemView.findViewById<MaterialCardView>(R.id.product_item_card)
+
+            card.setOnClickListener {
+                Log.i(TAG, "TESTER entri aqui")
+            }
+
             val nameTextView = itemView.findViewById<TextView>(R.id.product_item_name_value)
             val descriptionProduct =
                 itemView.findViewById<TextView>(R.id.product_item_description_value)
