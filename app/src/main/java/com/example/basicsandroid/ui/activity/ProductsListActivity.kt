@@ -4,13 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.basicsandroid.R
 import com.example.basicsandroid.dao.ProductsDao
-import com.example.basicsandroid.databinding.ActivityLoginBinding
 import com.example.basicsandroid.databinding.ActivityProductsListBinding
 import com.example.basicsandroid.ui.recycleviewer.adapter.ProductListAdapter
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ProductsListActivity : AppCompatActivity(R.layout.activity_products_list) {
     private lateinit var binding: ActivityProductsListBinding;
@@ -36,7 +33,7 @@ class ProductsListActivity : AppCompatActivity(R.layout.activity_products_list) 
         startActivity(intent);
     }
 
-    //ciclos de vida
+    // Ciclos de vida
     // 1. onCreate
     // 2. onResume
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,6 +49,4 @@ class ProductsListActivity : AppCompatActivity(R.layout.activity_products_list) 
         super.onResume()
         adapter.onUpdate(productsDao.searchProuct());
     }
-
-
 }

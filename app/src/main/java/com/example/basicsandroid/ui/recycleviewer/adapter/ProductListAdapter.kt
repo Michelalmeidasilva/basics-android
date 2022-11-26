@@ -3,6 +3,9 @@ package com.example.basicsandroid.ui.recycleviewer.adapter
 import android.annotation.SuppressLint
 import android.content.ContentValues.TAG
 import android.content.Context
+import android.content.Intent
+import android.content.Intent.ACTION_DIAL
+import android.net.Uri
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -12,9 +15,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.basicsandroid.R
 import com.example.basicsandroid.databinding.ActivityProductItemBinding
 import com.example.basicsandroid.model.Product
+import com.example.basicsandroid.ui.activity.ProductDetailsActivity
 import com.google.android.material.card.MaterialCardView
 import java.text.NumberFormat
 import java.util.*
+
 
 class ProductListAdapter(private val context: Context, products: List<Product>) :
     RecyclerView.Adapter<ProductListAdapter.ViewHolder>() {
@@ -22,12 +27,15 @@ class ProductListAdapter(private val context: Context, products: List<Product>) 
 
     private val mutableProducts = products.toMutableList();
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class ViewHolder(view: View, private val context: Context) : RecyclerView.ViewHolder(view) {
         fun bind(product: Product) {
             val card = itemView.findViewById<MaterialCardView>(R.id.product_item_card)
 
             card.setOnClickListener {
-                Log.i(TAG, "TESTER entri aqui")
+                val intent = Intent(context, ProductDetailsActivity::class.java)
+
+                intent.putExtra("DetailsProduct", product)
+                context.startActivity(intent);
             }
 
             val nameTextView = itemView.findViewById<TextView>(R.id.product_item_name_value)
@@ -51,7 +59,7 @@ class ProductListAdapter(private val context: Context, products: List<Product>) 
         val inflater = LayoutInflater.from(context)
 
         val view = inflater.inflate(R.layout.activity_product_item, parent, false)
-        return ViewHolder(view)
+        return ViewHolder(view, context)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
