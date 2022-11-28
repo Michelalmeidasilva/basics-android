@@ -4,6 +4,7 @@
     package="com.example.basicsandroid">
 
     <application
+        android:name=".application.LogRocketApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -12,8 +13,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Basicsandroid"
-        android:name=".application.LogRocketApplication"
         tools:targetApi="31">
+        <activity
+            android:name=".ui.activity.ProductDetailsActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".ui.activity.LoginActivity"
             android:exported="true">
@@ -27,17 +34,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ui.activity.ProductFormActivity"
-
             android:exported="false">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
 
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <!-- The OPENABLE category declares that the returned file is accessible
+                     from a content provider that supports OpenableColumns
+                     and ContentResolver.openFileDescriptor() -->
+                <category android:name="android.intent.category.OPENABLE" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ui.activity.ProductsListActivity"
             android:exported="false" />
@@ -45,8 +57,6 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
-
     </application>
 
 </manifest>

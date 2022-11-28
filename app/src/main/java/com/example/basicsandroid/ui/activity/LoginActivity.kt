@@ -16,6 +16,7 @@ class LoginActivity : AppCompatActivity(R.layout.activity_login) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         val view = binding.root
+        supportActionBar?.hide();
 
         binding.loginSaveButton.setOnClickListener {
             val intent = Intent(this, ProductsListActivity::class.java)
