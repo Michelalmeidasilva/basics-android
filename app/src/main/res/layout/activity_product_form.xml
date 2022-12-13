@@ -35,7 +35,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/product_form_name" />
 
-
         <EditText
             android:hint="Preço"
             android:id="@+id/product_form_price"
@@ -46,35 +45,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/product_form_description" />
-
-
-        <ImageView
-            android:id="@+id/image_added"
-            android:layout_width="115dp"
-            android:layout_height="115dp"
-
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/product_form_price"
-            app:srcCompat="@drawable/ic_image" />
-
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/camera_added_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:src="@drawable/ic_add_a_photo"
-            app:layout_constraintStart_toEndOf="@+id/image_added"
-            app:layout_constraintTop_toBottomOf="@+id/product_form_price" />
-
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:layout_marginLeft="5dp"
-            android:id="@+id/photo_added_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_image_search"
-            app:layout_constraintStart_toEndOf="@+id/image_added"
-            app:layout_constraintTop_toBottomOf="@+id/camera_added_button" />
-
 
         <Button
             android:id="@+id/product_form_save_button"
